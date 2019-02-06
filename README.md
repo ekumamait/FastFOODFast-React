@@ -2,6 +2,8 @@
 ------------
 
 [![Build Status](https://travis-ci.org/ekumamait/FastFOODFast-React.svg?branch=develop)](https://travis-ci.org/ekumamait/FastFOODFast-React)
+[![Coverage Status](https://coveralls.io/repos/github/ekumamait/FastFOODFast-React/badge.svg?branch=develop)](https://coveralls.io/github/ekumamait/FastFOODFast-React?branch=develop)
+
 ------------
 
 ##### TABLE OF CONTENT;
@@ -10,9 +12,9 @@
 
 - [x] **DESCRIPTION**
 - [x] **PROJECT SETUP**
-- [] **AVAILABLE ROUTES**
-- [] **TESTS**
-- [] **PROJECT DEMO**
+- [ ] **AVAILABLE ROUTES**
+- [ ] **TESTS**
+- [ ] **PROJECT DEMO**
 
 ------------
 
@@ -27,7 +29,7 @@ This is an online food order and delivery service app for a restaurant where reg
 ------------
 
 1. Clone the Repository
-`https://github.com/ekumamait/FastFOODFast`
+` https://github.com/ekumamait/FastFOODFast-React.git `
 
 2. Navigate to the application directory
 ` cd FastFOODFast `
@@ -43,28 +45,21 @@ This is an online food order and delivery service app for a restaurant where reg
 
 ------------
 
-###### AVAILABLE ROUTES;
+###### AVAILABLE FUNCTIONALITY;
 
-| EndPoint                | Methods | Functionality                       |
-| ----------------------- | ------- | ----------------------------------- |
-| /api/v2/auth/sign_up    | POST    | `signs up a user `                  |
-| /api/v2/auth/login      | POST    | `Logs in a user`                    |
-| /api/v2/users/orders    | POST    | `place a new order`                 |
-| /api/v2/users/orders    | GET     | `Fetch all logged in user's orders` |
-| /api/v2/orders          | GET     | `Fetch all users orders`            |
-| /api/v2/orders/order_id | GET     | `Fetch specific order`              |
-| /api/v2/orders/order_id | PUT     | `Update the status of an order`     |
-| /api/v2/menu            | GET     | `Fetch Menu`                        |
-| /api/v2/menu            | POST    | `Add meal to the Menu`              |
-| /api/v2/users/user_id   | PUT     | `Promote user role to admin`        |
+| URL     | Methods | Functionality       |
+| ------- | ------- | ------------------- |
+| sign_up | POST    | `signs up a user `  |
+| login   | POST    | `Logs in a user`    |
+| menu    | GET     | `Fetch Menu`        |
 
 ------------
 
 ###### :microscope: TESTS;
 
-- [] Tests for components
-- [] Tests for reducers
-- [] Tests for actions 
+- [ ] Tests for components
+- [ ] Tests for reducers
+- [ ] Tests for actions 
 
 - command to run tests:
     ` yarn test -u `
