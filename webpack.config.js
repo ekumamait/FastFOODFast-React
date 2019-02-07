@@ -23,7 +23,7 @@ module.exports = {
         loader: ['style-loader', 'css-loader', 'sass-loader']
       },
       {
-        test: /\.(png|jpg|gif|svg)$/,
+        test: /\.(png|jpg|gif|svg|JPG)$/,
         use: [
           {
             loader: 'file-loader',
@@ -51,9 +51,10 @@ module.exports = {
       silent: false,
       expand: false,
       defaults: false
-    }),  
-  new webpack.HotModuleReplacementPlugin(),
-  new HtmlWebpackPlugin({
-    template:'public/index.html'
-  })]
+    }),
+    new webpack.HotModuleReplacementPlugin(),
+    new HtmlWebpackPlugin({
+      template: 'public/index.html'
+    })
+  ]
 };
