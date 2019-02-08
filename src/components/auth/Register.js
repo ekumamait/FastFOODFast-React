@@ -2,14 +2,15 @@ import React, { Component } from 'react';
 import { withRouter, Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
-import { loginUser } from '../../actions/AuthActions';
+import { registerUser } from '../../actions/AuthActions';
 import img from '../../images/3fs.JPG';
 
-export class Login extends Component {
+export class Register extends Component {
   constructor() {
     super();
     this.state = {
       username: '',
+      email: '',
       password: ''
     };
     this.onChange = this.onChange.bind(this);
@@ -25,7 +26,7 @@ export class Login extends Component {
         this.setState({ notFoundUser: nextProps.errors.error });
       }
     } else {
-      window.localStorage.setItem('token', loginUser.nextProps.user.token);
+      window.localStorage.setItem('token', registerUser.nextProps.user.token);
     }
   }
   onChange(e) {
@@ -34,10 +35,11 @@ export class Login extends Component {
   onSubmit(e) {
     e.preventDefault();
     const userData = {
-      Username: this.state.username,
-      Password: this.state.password
+      user_name: this.state.username,
+      user_email: this.state.email,
+      user_password: this.state.password
     };
-    this.props.loginUser(userData, this.props.history);
+    this.props.registerUser(userData, this.props.history);
   }
 
   render() {
@@ -47,9 +49,8 @@ export class Login extends Component {
           <h2>
             <img src={img} width="30%" />
           </h2>
-          <h1>Order delicious food online!</h1>
           <h3>
-            Have no account sign up <Link to="/register">here</Link>
+            Have an account Log In <Link to="/login">here</Link>
           </h3>
           <input
             type="text"
@@ -60,6 +61,14 @@ export class Login extends Component {
             onChange={this.onChange}
           />
           <input
+            type="email"
+            id="email"
+            name="email"
+            placeholder="Enter Email"
+            value={this.state.email}
+            onChange={this.onChange}
+          />
+          <input
             type="password"
             id="password"
             name="password"
@@ -67,9 +76,15 @@ export class Login extends Component {
             value={this.state.password}
             onChange={this.onChange}
           />
-          <input type="submit" id="signinButton" name="submit" value="Sign In" />
+          <input
+            type="password"
+            id="confirmPassword"
+            name="confirmPassword"
+            placeholder="Confirm password"
+          />
+          <input type="submit" id="signinButton" name="submit" value="Sign Up" />
           <small>
-            <a href="#">forgot password?</a>
+            By submiting, you agree to the <a href="#">Terms and Conditions</a> here.
           </small>
         </div>
       </form>
@@ -77,8 +92,8 @@ export class Login extends Component {
   }
 }
 
-Login.propType = {
-  loginUser: PropTypes.func.isRequired,
+Register.propType = {
+  registerUser: PropTypes.func.isRequired,
   auth: PropTypes.object.isRequired,
   errors: PropTypes.object.isRequired
 };
@@ -91,5 +106,5 @@ const mapStateToProps = state => {
 
 export default connect(
   mapStateToProps,
-  { loginUser }
-)(withRouter(Login));
+  { registerUser }
+)(withRouter(Register));
