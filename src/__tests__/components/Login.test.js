@@ -1,10 +1,6 @@
 import React from 'react';
-import { shallow, mount } from 'enzyme';
-import Enzyme from 'enzyme';
-import EnzymeAdapter from 'enzyme-adapter-react-16';
+import { shallow } from 'enzyme';
 import { Login } from '../../components/auth/Login';
-
-Enzyme.configure({ adapter: new EnzymeAdapter() });
 
 describe('<Login/>', () => {
   it('should render without throwing an error', () => {
