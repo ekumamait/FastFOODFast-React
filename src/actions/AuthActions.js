@@ -18,14 +18,12 @@ export const loginUser = (userData, history) => dispatch => {
           type: GET_ERRORS,
           payload: data.error
         });
-      } else {
-        console.log(data);
-        let token = data.access_token;
-        let user = data.username;
-        localStorage.setItem('token', token);
-        localStorage.setItem('username', user);
-        history.push('/menu');
       }
+      const token = data.access_token;
+      const user = data.username;
+      localStorage.setItem('token', token);
+      localStorage.setItem('username', user);
+      history.push('/menu');
     });
 };
 
@@ -45,13 +43,11 @@ export const registerUser = (userData, history) => dispatch => {
           type: GET_ERRORS,
           payload: data.error
         });
-      } else {
-        console.log(data);
-        let token = data.access_token;
-        let user = data.username;
-        localStorage.setItem('token', token);
-        localStorage.setItem('username', user);
-        history.push('/');
       }
+      const token = data.access_token;
+      const user = data.username;
+      localStorage.setItem('token', token);
+      localStorage.setItem('username', user);
+      history.push('/');
     });
 };

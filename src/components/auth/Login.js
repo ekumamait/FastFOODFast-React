@@ -15,6 +15,7 @@ export class Login extends Component {
     this.onChange = this.onChange.bind(this);
     this.onSubmit = this.onSubmit.bind(this);
   }
+
   componentWillReceiveProps(nextProps) {
     if (nextProps.errors) {
       if (nextProps.errors.email) {
@@ -28,9 +29,11 @@ export class Login extends Component {
       window.localStorage.setItem('token', loginUser.nextProps.user.token);
     }
   }
+
   onChange(e) {
     this.setState({ [e.target.name]: e.target.value });
   }
+
   onSubmit(e) {
     e.preventDefault();
     const userData = {
@@ -42,37 +45,39 @@ export class Login extends Component {
 
   render() {
     return (
-      <form noValidate onSubmit={this.onSubmit}>
-        <div className="loginBox">
-          <h2>
-            <img src={img} width="30%" />
-          </h2>
-          <h1>Order delicious food online!</h1>
-          <h3>
-            Have no account sign up <Link to="/register">here</Link>
-          </h3>
-          <input
-            type="text"
-            id="username"
-            name="username"
-            placeholder="Enter Username"
-            value={this.state.username}
-            onChange={this.onChange}
-          />
-          <input
-            type="password"
-            id="password"
-            name="password"
-            placeholder="Enter password"
-            value={this.state.password}
-            onChange={this.onChange}
-          />
-          <input type="submit" id="signinButton" name="submit" value="Sign In" />
-          <small>
-            <a href="#">forgot password?</a>
-          </small>
-        </div>
-      </form>
+      <div className="homebackground">
+        <form noValidate onSubmit={this.onSubmit}>
+          <div className="loginBox">
+            <h2>
+              <img src={img} width="30%" />
+            </h2>
+            <h1>Order delicious food online!</h1>
+            <h3>
+              Have no account sign up <Link to="/register">here</Link>
+            </h3>
+            <input
+              type="text"
+              id="username"
+              name="username"
+              placeholder="Enter Username"
+              value={this.state.username}
+              onChange={this.onChange}
+            />
+            <input
+              type="password"
+              id="password"
+              name="password"
+              placeholder="Enter password"
+              value={this.state.password}
+              onChange={this.onChange}
+            />
+            <input type="submit" id="signinButton" name="submit" value="Sign In" />
+            <small>
+              <a>forgot password?</a>
+            </small>
+          </div>
+        </form>
+      </div>
     );
   }
 }

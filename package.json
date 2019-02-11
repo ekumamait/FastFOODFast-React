@@ -7,13 +7,17 @@
   "jest": {
     "verbose": true,
     "moduleNameMapper": {
-      "\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga|JPG)$": "<rootDir>/src/__mocks__/fileMock.js",
+      "\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga|JPG|PNG)$": "<rootDir>/src/__mocks__/fileMock.js",
       "\\.(css|scss)$": "<rootDir>/src/__mocks__/StyleMock.js"
     }
   },
   "scripts": {
     "start": "webpack-dev-server --mode development",
     "build": "webpack --mode development",
+    "dev": "yarn build && yarn server",
+    "heroku": "rm -rf dist && yarn prod && yarn server",
+    "prod": "webpack --mode production",
+    "server": "node server.js",
     "coveralls": "cat ./coverage/lcov.info | node node_modules/.bin/coveralls",
     "heroku-postbuild": "echo API_URL=$API_URL > .env && yarn run build",
     "test": "jest",
