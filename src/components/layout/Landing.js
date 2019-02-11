@@ -26,7 +26,7 @@ class Landing extends Component {
               </button>
               <div className="dropdown-content">
                 <Link to="/">Order History</Link>
-                <Link to="/">Log Out</Link>
+                <Link to="/" onClick={e=> localStorage.removeItem('token')}>Log Out</Link>
               </div>
             </div>
           </div>
