@@ -12,8 +12,8 @@
 
 - [x] **DESCRIPTION**
 - [x] **PROJECT SETUP**
-- [ ] **AVAILABLE ROUTES**
-- [ ] **TESTS**
+- [x] **AVAILABLE FUNCTIONALITY**
+- [x] **TESTS**
 - [ ] **PROJECT DEMO**
 
 ------------
@@ -51,15 +51,15 @@ This is an online food order and delivery service app for a restaurant where reg
 | ------- | ------- | ------------------- |
 | sign_up | POST    | `signs up a user `  |
 | login   | POST    | `Logs in a user`    |
-| menu    | GET     | `Fetch Menu`        |
+| menu    | GET     | `Displays Menu`        |
 
 ------------
 
 ###### :microscope: TESTS;
 
-- [ ] Tests for components
+- [x] Tests for components
 - [ ] Tests for reducers
-- [ ] Tests for actions 
+- [x] Tests for actions 
 
 - command to run tests:
     ` yarn test -u `
@@ -72,7 +72,7 @@ This is an online food order and delivery service app for a restaurant where reg
 ###### Project Demo;
 
 Here is the link to the Demo:
-
+https://ekumamait-fastfoodfast-react.herokuapp.com/
 
 ------------
 

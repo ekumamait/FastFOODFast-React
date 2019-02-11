@@ -16,6 +16,7 @@ export class Register extends Component {
     this.onChange = this.onChange.bind(this);
     this.onSubmit = this.onSubmit.bind(this);
   }
+
   componentWillReceiveProps(nextProps) {
     if (nextProps.errors) {
       if (nextProps.errors.email) {
@@ -29,9 +30,11 @@ export class Register extends Component {
       window.localStorage.setItem('token', registerUser.nextProps.user.token);
     }
   }
+
   onChange(e) {
     this.setState({ [e.target.name]: e.target.value });
   }
+
   onSubmit(e) {
     e.preventDefault();
     const userData = {
@@ -44,50 +47,52 @@ export class Register extends Component {
 
   render() {
     return (
-      <form noValidate onSubmit={this.onSubmit}>
-        <div className="loginBox">
-          <h2>
-            <img src={img} width="30%" />
-          </h2>
-          <h3>
-            Have an account Log In <Link to="/login">here</Link>
-          </h3>
-          <input
-            type="text"
-            id="username"
-            name="username"
-            placeholder="Enter Username"
-            value={this.state.username}
-            onChange={this.onChange}
-          />
-          <input
-            type="email"
-            id="email"
-            name="email"
-            placeholder="Enter Email"
-            value={this.state.email}
-            onChange={this.onChange}
-          />
-          <input
-            type="password"
-            id="password"
-            name="password"
-            placeholder="Enter password"
-            value={this.state.password}
-            onChange={this.onChange}
-          />
-          <input
-            type="password"
-            id="confirmPassword"
-            name="confirmPassword"
-            placeholder="Confirm password"
-          />
-          <input type="submit" id="signinButton" name="submit" value="Sign Up" />
-          <small>
-            By submiting, you agree to the <a href="#">Terms and Conditions</a> here.
-          </small>
-        </div>
-      </form>
+      <div className="homebackground">
+        <form noValidate onSubmit={this.onSubmit}>
+          <div className="loginBox">
+            <h2>
+              <img src={img} width="30%" />
+            </h2>
+            <h3>
+              Have an account Log In <Link to="/">here</Link>
+            </h3>
+            <input
+              type="text"
+              id="username"
+              name="username"
+              placeholder="Enter Username"
+              value={this.state.username}
+              onChange={this.onChange}
+            />
+            <input
+              type="email"
+              id="email"
+              name="email"
+              placeholder="Enter Email"
+              value={this.state.email}
+              onChange={this.onChange}
+            />
+            <input
+              type="password"
+              id="password"
+              name="password"
+              placeholder="Enter password"
+              value={this.state.password}
+              onChange={this.onChange}
+            />
+            <input
+              type="password"
+              id="confirmPassword"
+              name="confirmPassword"
+              placeholder="Confirm password"
+            />
+            <input type="submit" id="signinButton" name="submit" value="Sign Up" />
+            <small>
+              By submiting, you agree to the <a href="#">Terms and Conditions</a> here.
+            </small>
+          </div>
+        </form>
+      </div>
     );
   }
 }
