@@ -14,7 +14,7 @@
 - [x] **PROJECT SETUP**
 - [x] **AVAILABLE FUNCTIONALITY**
 - [x] **TESTS**
-- [ ] **PROJECT DEMO**
+- [x] **PROJECT DEMO**
 
 ------------
 
@@ -32,7 +32,7 @@ This is an online food order and delivery service app for a restaurant where reg
 ` https://github.com/ekumamait/FastFOODFast-React.git `
 
 2. Navigate to the application directory
-` cd FastFOODFast `
+` cd FastFOODFast-React `
 
 3. install all dependencies
 ` yarn `
